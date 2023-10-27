@@ -1,0 +1,14 @@
+dask==2023.10.0
+dask-expr
+ipycytoscape  # Not using `python-graphviz` here
+scipy
+matplotlib
+pip
+pyarrow==13
+s3fs
+coiled
+gilknocker
+# JupyterLab + extensions
+jupyterlab
+dask-labextension
+ipywidgets
