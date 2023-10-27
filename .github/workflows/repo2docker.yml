@@ -3,8 +3,11 @@ on: [push] # You may want to trigger this Action on other things than a push.
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
+    strategy:
+      matrix:
+        docker-regs: [ "", "_2", "_3" ]
 
+    steps:
     - name: checkout files in repo
       uses: actions/checkout@main
 
@@ -13,4 +16,4 @@ jobs:
       with:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        IMAGE_NAME: "phofl93/dask-tutorial-nyc-2023" # this overrides the image name
+        IMAGE_NAME: phofl93/dask-tutorial-nyc-2023${{ matrix.docker-regs }}
