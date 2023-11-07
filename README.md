@@ -1,20 +1,31 @@
 # Dask-tutorial-pydata-nyc-2023
 
-## How do we get started?
+## Get started
+
+Create a conda environment
 
 ```
-pip install coiled
+conda create -n dask_tutorial python=3.11
 ```
 
-Log into Coiled via the terminal:
+Install jupyterLab and graphviz:
 
 ```
-coiled login --token 0ec54aea50974fb5a4164cc2072fa6c5-6e8a47625e58657cce0b4dd87b8e542b86b10f73
+conda install -c conda-forge jupyterlab=4.0.0
+pip install graphviz
+brew install graphviz
 ```
 
-Start a Notebook in the terminal that we can work on:
+Start a jupyterLab session and follow the notebooks in `./notebooks`:
 
 ```
-coiled notebook start --container phofl93/dask-tutorial-nyc-2023
+jupyter-lab
+```
+
+Check your jupyterLab version (`conda list`) and follow the instructions here https://github.com/dask/dask-labextension to install dask extension in jupyterLab, if jupyterlab=4.0.0 it is sufficient to run:
 
 ```
+pip install dask-labextension
+```
+
+Watch the video at https://www.youtube.com/watch?v=EX_voquHdk0&ab_channel=Dask to use dask extension within jupyterlab.
